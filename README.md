@@ -1,3 +1,3 @@
-# flutter_ar
+# Flutter AR
 
 A new Flutter AR project.
