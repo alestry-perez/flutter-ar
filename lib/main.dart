@@ -31,8 +31,6 @@ class _MyHomePageState extends State<MyHomePage> {
   _onArCoreViewCreated(ArCoreController _arcoreController) {
     arCoreController = _arcoreController;
     _addSphere(arCoreController);
-    _addCube(arCoreController);
-    _addCyclinder(arCoreController);
   }
 
   _addSphere(ArCoreController _arcoreController) {
@@ -44,38 +42,6 @@ class _MyHomePageState extends State<MyHomePage> {
         0,
         0,
         -1,
-      ),
-    );
-
-    _arcoreController.add(node);
-  }
-
-  _addCyclinder(ArCoreController _arcoreController) {
-    final material = ArCoreMaterial(color: Colors.green, reflectance: 1);
-    final cylinder =
-        ArCoreCylinder(materials: [material], radius: 0.4, height: 0.3);
-    final node = ArCoreNode(
-      shape: cylinder,
-      position: vector.Vector3(
-        0,
-        -2.5,
-        -3.0,
-      ),
-    );
-
-    _arcoreController.add(node);
-  }
-
-  _addCube(ArCoreController _arcoreController) {
-    final material = ArCoreMaterial(color: Colors.pink, metallic: 1);
-    final cube =
-        ArCoreCube(materials: [material], size: vector.Vector3(1, 1, 1));
-    final node = ArCoreNode(
-      shape: cube,
-      position: vector.Vector3(
-        -0.5,
-        -0.5,
-        -3,
       ),
     );
 
