@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _addSphere(ArCoreController _arcoreController) {
-    final material = ArCoreMaterial(color: Colors.deepPurple);
+    final material = ArCoreMaterial(color: Colors.deepPurple, reflectance: 1);
     final sphere = ArCoreSphere(materials: [material], radius: 0.2);
     final node = ArCoreNode(
       shape: sphere,
