@@ -30,23 +30,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _onArCoreViewCreated(ArCoreController _arcoreController) {
     arCoreController = _arcoreController;
-    _addSphere(arCoreController);
+    _addCube(arCoreController);
   }
 
-  _addSphere(ArCoreController _arcoreController) {
-    final material = ArCoreMaterial(color: Colors.deepPurple[300], reflectance: 1);
-    final sphere = ArCoreSphere(materials: [material], radius: 0.2);
-    final node = ArCoreNode(
-      shape: sphere,
-      position: vector.Vector3(
-        0,
-        0,
-        -1,
-      ),
-    );
-
-    _arcoreController.add(node);
-  }
+  void _addCube(ArCoreController controller) {
+  final material = ArCoreMaterial(
+    color: Colors.blue,
+    metallic: 1.0,
+  );
+  final cube = ArCoreCube(
+    materials: [material],
+    size: vector.Vector3(0.2, 0.2, 0.2),
+    
+  );
+  final node = ArCoreRotatingNode(
+    shape: cube,
+    position: vector.Vector3(0, 0, -1.5),
+    rotation: vector.Vector4(0,0,0,0),
+  );
+  
+  
+  controller.add(node);
+}
 
   @override
   void dispose() {
